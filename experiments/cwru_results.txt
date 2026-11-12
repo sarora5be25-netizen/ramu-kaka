@@ -1,0 +1,26 @@
+normal files: ['Normal_0.mat', 'Normal_1.mat', 'Normal_2.mat', 'Normal_3.mat']
+trained on 578 normal windows, no faults shown
+
+held-out NORMAL windows flagged by mistake: 2.0%
+
+fault windows flagged (higher is better):
+fault         size (1/1000 in)   windows   flagged
+ball                       007       236    100.0%
+ball                       014       236    100.0%
+ball                       021       236    100.0%
+ball                       028       235    100.0%
+inner race                 007       237    100.0%
+inner race                 014       236    100.0%
+inner race                 021       236    100.0%
+inner race                 028       235    100.0%
+outer race                 007       708    100.0%
+outer race                 014       236    100.0%
+outer race                 021       708    100.0%
+
+all fault windows flagged: 100.0%
+
+normal windows of an unseen motor load flagged by mistake:
+  load 0 left out: 28.6%
+  load 1 left out: 1.7%
+  load 2 left out: 1.7%
+  load 3 left out: 0.8%
