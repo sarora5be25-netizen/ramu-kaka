@@ -1,6 +1,6 @@
-"""The assistant side of Ramu Kaka.
+"""The assistant side.
 
-Mechanic, dealer and payment steps are SIMULATED. Nothing here calls a real
+Mechanic, dealer and payment steps are simulated. Nothing here calls a real
 phone number or moves real money. The owner's yes is required before any
 step that spends money or stops production.
 """

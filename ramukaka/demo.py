@@ -1,4 +1,4 @@
-"""End to end demo on made-up data. Run: python -m ramukaka.demo"""
+"""Runs the detector and the assistant on made-up data: python -m ramukaka.demo"""
 import numpy as np
 from .simulate import make_windows, window
 from .detector import Baseline, Watcher
@@ -16,8 +16,8 @@ def main():
                        make_windows(500, "idle", None, 1)])
     base = Baseline().fit(train)
 
-    print("Made-up data. These numbers only show the code works, not how")
-    print("accurate it is on a real motor.\n")
+    print("This is made-up data. The numbers show the code runs, not how")
+    print("accurate it will be on a real motor.\n")
     print(f"healthy windows flagged by mistake: {rates(base, None):.0%}")
     for f in ("overload", "loose_mount", "bearing"):
         print(f"{f:12s} windows caught: {rates(base, f):.0%}")
