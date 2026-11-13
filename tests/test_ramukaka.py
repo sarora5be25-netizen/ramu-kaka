@@ -43,3 +43,16 @@ def test_owner_yes_needed():
     assert not any("accepted" in l for l in out)
     out = handle_flag("L1", h, ["M"], [2], True, {"M": True})
     assert any("accepted" in l for l in out)
+
+
+def test_levels_normal_warning_inspect():
+    b = base()
+    w = Watcher(b)
+    odd = [9.0, 9.0, 9.0, 9.0]
+    assert w.level() == "Normal"
+    for _ in range(4):
+        w.push(odd)
+    assert w.level() == "Warning"
+    for _ in range(2):
+        w.push(odd)
+    assert w.level() == "Inspect"
