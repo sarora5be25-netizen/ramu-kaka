@@ -65,3 +65,16 @@ class Watcher:
     def push(self, x):
         self.recent = (self.recent + [self.baseline.is_odd(x)])[-self.window:]
         return sum(self.recent) >= self.need
+
+    def level(self):
+        """Normal, Warning or Inspect, from the recent windows.
+        Normal:  fewer than `need` odd windows (readings within the baseline).
+        Warning: `need` or more odd windows (persistent deviation, keep watching).
+        Inspect: every recent window is odd (sustained, ask a technician to check).
+        """
+        odd = sum(self.recent)
+        if len(self.recent) == self.window and odd == self.window:
+            return "Inspect"
+        if odd >= self.need:
+            return "Warning"
+        return "Normal"
